@@ -1,6 +1,6 @@
 ---
 name: laravel-inertia-vue
-description: Laravel + Inertia.js v2 + Vue 3 Composition API integration patterns. Use when building Inertia page components, handling forms with useForm, implementing layouts, configuring SSR, or working with Vue composables in Laravel Inertia stack.
+description: "Laravel + Inertia.js v2 + Vue 3 Composition API integration patterns. Use when building Inertia page components with Vue, handling forms with useForm, managing shared data with usePage, implementing persistent layouts, configuring SSR, or working with Vue 3 composables in a Laravel Inertia stack. Triggers on tasks involving Inertia.js with Vue, Vue page props, Inertia form handling, Inertia routing with Vue, deferred props, prefetching, merging props, infinite scroll, or any Laravel + Vue SPA-like development. Also use when the user mentions Inertia Link, router.visit, Head component, or wants to set up a new Laravel project with Vue and Inertia. Use PROACTIVELY whenever Vue and Laravel are mentioned together."
 compatible_agents:
   - Claude Code
   - Cursor
@@ -177,7 +177,7 @@ function submit() {
 </script>
 
 <template>
-    <input type="file" @input="form.avatar = ($event.target as HTMLInputElement).files?.[0]" />
+    <input type="file" @input="form.avatar = ($event.target as HTMLInputElement).files?.[0] ?? null" />
     <progress v-if="form.progress" :value="form.progress.percentage" max="100" />
 </template>
 ```
